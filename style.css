@@ -1,0 +1,279 @@
+/* ===== Переменные ===== */
+:root {
+  --color-primary: #1e5aa8;
+  --color-accent: #0b2a5c;
+  --color-badge: #ffd54f;
+  --font-main: Arial, sans-serif;
+  --font-heading: Georgia, "Times New Roman", serif;
+}
+
+/* Светлая тема */
+.theme-light {
+  --color-bg: #f2f7fd;
+  --color-card: #ffffff;
+  --color-text: #14325c;
+  --color-heading: #1e5aa8;
+  --color-link: #1e5aa8;
+  --color-visited: #5b2a86;
+  --color-header: #1e5aa8;
+  --color-nav: #0b2a5c;
+  --color-border: #1e5aa8;
+}
+
+/* Тёмная тема */
+.theme-dark {
+  --color-bg: #0d1b2e;
+  --color-card: #16273f;
+  --color-text: #e6eefb;
+  --color-heading: #8cc0ff;
+  --color-link: #8cc0ff;
+  --color-visited: #d2b4f5;
+  --color-header: #0a1626;
+  --color-nav: #1e5aa8;
+  --color-border: #3d7bd1;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+  transition: background 0.3s, color 0.3s;
+}
+
+h1, h2 { font-family: var(--font-heading); }
+h2 { color: var(--color-heading); }
+
+header, footer {
+  background: var(--color-header);
+  color: #ffffff;
+  text-align: center;
+}
+footer { padding: 16px; }
+header h1 { margin: 0 0 6px; }
+header p { margin: 0; }
+
+/* ===== Навигация ===== */
+nav { margin: 14px 0; }
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+nav a:link, nav a:visited {
+  display: block;
+  color: #ffffff;
+  background: var(--color-nav);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+nav a:hover, nav a:focus { background: #061a3d; color: #ffffff; }
+
+/* ===== Кнопки ===== */
+.btn, button[type="submit"] {
+  background: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+}
+.btn:hover, button[type="submit"]:hover { background: var(--color-accent); }
+.btn:active, button[type="submit"]:active { background: #000000; }
+.btn:focus, button:focus { outline: 3px solid var(--color-badge); outline-offset: 2px; }
+
+/* ===== Каркас ===== */
+.layout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 0 16px;
+}
+main {
+  position: static;
+  max-width: 1000px;
+  margin: 0 auto 20px;
+  padding: 0 16px;
+}
+figure { margin: 0; }
+img { display: block; max-width: 100%; height: auto; border-radius: 8px; }
+
+aside {
+  flex: 0 1 300px;
+  min-width: 200px;
+  background: var(--color-card);
+  border: 2px solid var(--color-border);
+  border-radius: 6px;
+  padding: 12px 16px;
+}
+section {
+  background: var(--color-card);
+  border-left: 5px solid var(--color-border);
+  padding: 8px 16px;
+  margin-bottom: 16px;
+}
+
+a:link { color: var(--color-link); }
+a:visited { color: var(--color-visited); }
+a:hover { text-decoration: none; }
+a:focus { outline: 3px solid var(--color-badge); outline-offset: 2px; }
+
+/* ===== Карточки навыков ===== */
+.skills-grid {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 12px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+}
+.skill-card {
+  position: relative;
+  background: var(--color-primary);
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+  padding: 28px 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(11, 42, 92, 0.2);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.skill-card:hover { transform: scale(1.05); box-shadow: 0 10px 22px rgba(11, 42, 92, 0.35); }
+.skill-card:active { transform: scale(0.98); box-shadow: 0 3px 6px rgba(11, 42, 92, 0.6); }
+.badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: var(--color-badge);
+  color: var(--color-accent);
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+/* ===== Проекты (ЛР №5) ===== */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  align-items: start;
+  margin-bottom: 8px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 16px;
+  border-radius: 8px;
+  color: #ffffff;
+  background:
+    linear-gradient(rgba(8, 24, 60, 0.88), rgba(8, 24, 60, 0.88)),
+    linear-gradient(135deg, #1e5aa8, #6fb0f5);
+}
+.card h3 { margin: 0; overflow-wrap: anywhere; }
+.card p {
+  margin: 0;
+  overflow-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card.expanded p { display: block; }
+.card.expanded { outline: 3px solid var(--color-badge); }
+.card-btn {
+  margin-top: auto;
+  background: #ffffff;
+  color: var(--color-accent);
+  border: none;
+  font-weight: bold;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.card-btn:hover { background: #cfe2fb; }
+.hidden { display: none; }
+
+/* ===== Форма ===== */
+form { display: flex; flex-direction: column; gap: 10px; }
+input, textarea {
+  padding: 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-family: inherit;
+  background: #ffffff;
+  color: #14325c;
+}
+input:focus, textarea:focus { outline: 2px solid var(--color-accent); }
+
+@media (max-width: 599px) {
+  .layout { flex-direction: column; }
+  aside { flex: 1 1 auto; width: 100%; }
+  nav ul { flex-direction: column; }
+}
+
+/* ===== Галерея скриншотов (Grid) и просмотр ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+.shot { margin: 0; overflow: hidden; border-radius: 8px; background: var(--color-card); }
+.shot a { display: block; cursor: zoom-in; }
+.shot a:hover img { opacity: 0.85; }
+.shot img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 8 / 5;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 0;
+}
+.shot figcaption {
+  padding: 8px 12px;
+  color: #ffffff;
+  background: rgba(8, 24, 60, 0.88);
+}
+@media (min-width: 600px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 992px) { .gallery { grid-template-columns: repeat(3, 1fr); } }
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.88);
+  cursor: zoom-out;
+}
+.lightbox:target { display: flex; }
+.lightbox img {
+  max-width: 92%;
+  max-height: 92%;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+}
