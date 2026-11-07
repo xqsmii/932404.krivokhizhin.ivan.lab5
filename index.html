@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О себе — Иван Кривохижин</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #email {
+      padding: 14px;
+      border-radius: 10px;
+    }
+    #email:focus {
+      border-color: var(--color-accent);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(30, 90, 168, 0.35);
+    }
+  </style>
+</head>
+<body class="theme-light">
+
+  <header style="padding: 20px;">
+    <h1>Иван Кривохижин</h1>
+    <p>О себе: Студент-разработчик</p>
+    <nav aria-label="Основное меню">
+      <ul>
+        <li><a href="#skills">Навыки</a></li>
+        <li><a href="#projects">Проекты</a></li>
+        <li><a href="#gallery">Скриншоты</a></li>
+        <li><a href="#contact">Обратная связь</a></li>
+      </ul>
+    </nav>
+    <button type="button" class="btn" id="theme-btn">Тёмная тема</button>
+  </header>
+
+  <div class="layout">
+    <figure>
+      <img src="https://sun9-66.vkuserphoto.ru/s/v1/ig2/zMvWQ4vwfGUY7yiykdr_Rb0QNJlRjbc5Qf41JFOE0UPr5Mf_peALyyaY9tmKfdwKpy8hex3iF1fdZSdlO8Ea3wK3.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1280x1707,1440x1920,1920x2560&from=bu&u=31qDmY3vSsWaXxmBsjaepKrxcEXtafgTBneWk2YVuVY&cs=1920x0" alt="Аватар студента" width="275" height="350">
+    </figure>
+
+    <aside>
+      <h2>Любимые технологии</h2>
+      <ul>
+        <li>VS Code</li>
+        <li>Git</li>
+        <li><a href="https://github.com" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <main>
+    <section id="skills">
+      <h2>Навыки</h2>
+      <ul class="skills-grid">
+        <li class="skill-card">C++<span class="badge">Top skill</span></li>
+        <li class="skill-card">Python</li>
+        <li class="skill-card">SQL</li>
+        <li class="skill-card">HTML и CSS</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Проекты</h2>
+      <div class="controls">
+        <button type="button" class="btn" id="add-btn">Добавить проект</button>
+        <button type="button" class="btn" id="remove-btn">Удалить последний</button>
+        <button type="button" class="btn" id="toggle-btn">Свернуть проекты</button>
+      </div>
+      <div class="cards" id="projects-list"></div>
+    </section>
+
+    <section id="gallery">
+      <h2>Скриншоты проектов</h2>
+      <div class="gallery">
+          <figure class="shot">
+            <a href="#img1"><img src="image/1.jpg" alt="Код программы на C++ в VS Code" width="640" height="400"></a>
+            <figcaption>C++: код в VS Code</figcaption>
+          </figure>
+          <figure class="shot">
+            <a href="#img2"><img src="image/2.png" alt="SQL-запрос и результат выполнения" width="640" height="400"></a>
+            <figcaption>БД: SQL-запрос и результат</figcaption>
+          </figure>
+          <figure class="shot">
+            <a href="#img3"><img src="image/3.png" alt="Пример программы на C++" width="640" height="400"></a>
+            <figcaption>C++: пример программы</figcaption>
+          </figure>
+          <figure class="shot">
+            <a href="#img4"><img src="image/4.png" alt="Структура таблиц базы данных" width="640" height="400"></a>
+            <figcaption>БД: структура таблиц</figcaption>
+          </figure>
+          <figure class="shot">
+            <a href="#img5"><img src="image/5.png" alt="Код построения гистограммы на Python" width="640" height="400"></a>
+            <figcaption>Python: код построения графика</figcaption>
+          </figure>
+          <figure class="shot">
+            <a href="#img6"><img src="image/6.png" alt="Комбинированный график прибыли по месяцам" width="640" height="400"></a>
+            <figcaption>Python: комбинированный график</figcaption>
+          </figure>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Обратная связь</h2>
+      <form action="#" method="post">
+        <input type="text" name="name" placeholder="Ваше имя">
+        <input type="email" id="email" name="email" placeholder="Ваш email">
+        <textarea name="message" rows="5" placeholder="Ваше сообщение"></textarea>
+        <button type="submit">Отправить</button>
+      </form>
+    </section>
+    <a href="#gallery" class="lightbox" id="img1"><img src="image/1.jpg" alt="Код программы на C++ в VS Code"></a>
+    <a href="#gallery" class="lightbox" id="img2"><img src="image/2.png" alt="SQL-запрос и результат выполнения"></a>
+    <a href="#gallery" class="lightbox" id="img3"><img src="image/3.png" alt="Пример программы на C++"></a>
+    <a href="#gallery" class="lightbox" id="img4"><img src="image/4.png" alt="Структура таблиц базы данных"></a>
+    <a href="#gallery" class="lightbox" id="img5"><img src="image/5.png" alt="Код построения гистограммы на Python"></a>
+    <a href="#gallery" class="lightbox" id="img6"><img src="image/6.png" alt="Комбинированный график прибыли по месяцам"></a>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Иван Кривохижин.Все права защищены.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
